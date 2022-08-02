@@ -1,3 +1,5 @@
 # Adam's Data Analyst Portfolio
 
-.. coming soon
+Current Projects:
+  - COVID-19 Data Exploration 
+  - NBA Data Exploration
