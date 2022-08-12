@@ -29,8 +29,7 @@ FROM covid_deaths dea
 JOIN covid_vaccinations vacc
 	ON dea.location = vacc.location
    	AND dea.date = vacc.date
-WHERE
-	dea.location = 'United States' AND dea.continent iS NOT NULL
+WHERE dea.location = 'United States' AND dea.continent iS NOT NULL
     
 -- Let's see how vaccination rate has grown over time in the United States
 
@@ -58,7 +57,6 @@ FROM covid_deaths dea
 JOIN covid_vaccinations vacc
 	ON dea.location = vacc.location
     	AND dea.date = vacc.date
-WHERE
-	dea.location = 'United States' AND dea.continent iS NOT NULL
+WHERE dea.location = 'United States' AND dea.continent iS NOT NULL
 GROUP BY year
 ORDER BY year
