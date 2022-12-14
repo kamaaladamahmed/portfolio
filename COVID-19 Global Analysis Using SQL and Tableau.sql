@@ -48,7 +48,7 @@ SELECT location,
 SUM(new_cases) AS total_cases, 
 SUM(new_deaths) AS total_deaths, 
 SUM(new_cases)/MAX(population) AS infection_rate,
-SUM(new_deaths)/SUM(new_cases)*100 AS death_percentage
+SUM(new_deaths)/SUM(new_cases)*100 AS death_rate
 FROM covid_deaths
 WHERE continent IS NOT NULL AND new_cases IS NOT NULL AND date < '07-01-2022'
 GROUP BY location
