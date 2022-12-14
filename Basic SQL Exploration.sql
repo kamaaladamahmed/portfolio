@@ -1,4 +1,4 @@
--- What are the total numbers in the United States?
+-- Comparing total numbers in the United States
 
 SELECT 
 	MAX(population) AS population,
@@ -7,7 +7,7 @@ SELECT
 FROM covid_deaths
 WHERE location = 'United States' AND continent IS NOT NULL
     
--- Let's break it down by year, and look at both the infection and death rate of each
+-- Breaking down total cases, deaths, infection rate, and death rate by year
 
 SELECT 
 	EXTRACT(year FROM date) AS year,
@@ -19,7 +19,7 @@ FROM covid_deaths
 WHERE location = 'United States' AND continent IS NOT NULL
 GROUP BY year
 
--- Let's look at total vaccination data in the United States
+-- Total vaccination rate in the United States
 
 SELECT
 	MAX(dea.population) AS population,
@@ -31,7 +31,7 @@ JOIN covid_vaccinations vacc
    	AND dea.date = vacc.date
 WHERE dea.location = 'United States' AND dea.continent iS NOT NULL
     
--- Let's see how vaccination rate has grown over time in the United States
+-- Looking at vaccination rate over time in the United States
 
 SELECT
 	EXTRACT(year FROM dea.date) AS year,
@@ -46,7 +46,7 @@ WHERE dea.location = 'United States' AND dea.continent iS NOT NULL
 GROUP BY year, month
 ORDER BY year, month
 
--- Now let's compare infection rate, death rate, and vaccination rate every year in the United States
+-- Comparing infection rate, death rate, and vaccination rate every year in the United States
 
 SELECT
 	EXTRACT(year FROM dea.date) AS year,
