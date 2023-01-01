@@ -6,3 +6,5 @@ Current Projects:
 
   - COVID-19 Data Exploration using SQL and Tableau
   - NBA Data Exploration using R Studio
+
+[Tableau Visualizations](https://public.tableau.com/app/profile/adam.ahmed4555)
