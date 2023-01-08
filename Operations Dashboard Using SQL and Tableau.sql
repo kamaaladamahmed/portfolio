@@ -1,5 +1,5 @@
 -- Plato's Pizza Operations Dashboard 
--- https://public.tableau.com/app/profile/adam.ahmed4555/viz/PlatosPizzaOperationsDashboard/
+-- https://public.tableau.com/app/profile/adam.ahmed4555/viz/PlatosPizzaOperationsDashboardv2
 
 -- Questions to answer:
 --	What days and times do we tend to be busiest?
