@@ -44,20 +44,16 @@ GROUP BY piz.pizza_type_id, piz.size, piztyp.name
 
 --  Order Quantity per Hour per Day of the Week (Capacity Analysis)
 
-WITH hourly_pizzas AS (
-	SELECT
-		ord.date AS date,
-		to_char(ord.date, 'Day') AS weekday,
-		extract('hour', ord.time) AS hour,
-		COUNT(DISTINCT ord.order_id) AS orders,
-		SUM(det.quantity) AS pizzas
-	FROM orders AS ord
-	JOIN order_details AS det ON ord.order_id = det.order_id
-	GROUP BY ord.date, extract('hour', ord.time)
-	ORDER BY ord.date, hour
-)
-SELECT percentile_cont(0.5) WITHIN GROUP (ORDER BY pizzas)
-FROM hourly_pizzas;
+SELECT
+	ord.date AS date,
+	to_char(ord.date, 'Day') AS weekday,
+	extract('hour', ord.time) AS hour,
+	COUNT(DISTINCT ord.order_id) AS orders,
+	SUM(det.quantity) AS pizzas
+FROM orders AS ord
+JOIN order_details AS det ON ord.order_id = det.order_id
+GROUP BY ord.date, extract('hour', ord.time)
+ORDER BY ord.date, hour
 
 -- Pizza Type & Size Popularity (Bar Chart)
 
